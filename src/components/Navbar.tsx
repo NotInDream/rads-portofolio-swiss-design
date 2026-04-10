@@ -3,6 +3,7 @@ const links = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -16,10 +17,11 @@ function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-100 px-16 py-6 max-md:px-8 max-md:py-4 flex justify-between items-center bg-black backdrop-blur-md text-white">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex w-full px-4 py-2 items-center justify-between bg-black text-white">
       <div className="font-bebas text-2xl tracking-wide uppercase">
         Rad's Portofolio
       </div>
+
       <ul className="flex gap-10 max-md:gap-6 list-none">
         {links.map(({ href, label }) => (
           <li key={href}>
