@@ -31,9 +31,19 @@
 }
 
 body,
-h1, h2, h3, h4, h5, h6,
-p, figure, blockquote,
-ul, ol, dl, dd {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+ul,
+ol,
+dl,
+dd {
   margin: 0;
   padding: 0;
 }
@@ -391,14 +401,19 @@ body {
   margin-left: calc(var(--unit) * 1.5);
   font-size: 1.2rem;
   color: var(--grey);
-  transition:
-    transform 0.3s ease,
-    color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.project-arrow svg {
+  transition: transform 0.3s ease;
 }
 
 .project-item--linked:hover .project-arrow {
   color: var(--red);
-  transform: translate(2px, -2px);
+}
+
+.project-item--linked:hover .project-arrow svg {
+  transform: rotate(-45deg);
 }
 
 .project-internal {
@@ -662,12 +677,12 @@ body {
   font-family: "Bebas Neue", sans-serif;
   font-size: 1.2rem;
   color: var(--red);
-  transform: rotate(-45deg);
+  transform: rotate(0deg);
   transition: transform 0.3s ease;
 }
 
 .contact-link:hover .contact-link-arrow {
-  transform: rotate(0deg);
+  transform: rotate(45deg);
 }
 
 /* ── FOOTER ── */

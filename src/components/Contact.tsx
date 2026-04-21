@@ -1,3 +1,5 @@
+import { MoveUpRight } from "lucide-react";
+
 const links = [
   {
     href: "https://github.com/notindream",
@@ -41,7 +43,9 @@ function Contact() {
                 <div className="contact-link-label">{label}</div>
                 <div className="contact-link-value">{value}</div>
               </div>
-              <span className="contact-link-arrow">↑</span>
+              <span className="contact-link-arrow">
+                <MoveUpRight></MoveUpRight>
+              </span>
             </a>
           ))}
         </div>

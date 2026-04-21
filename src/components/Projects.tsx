@@ -1,3 +1,4 @@
+import { MoveUpRight } from "lucide-react";
 import SectionHeader from "./SectionHeader";
 
 const projects = [
@@ -52,11 +53,15 @@ function Projects() {
 
           return (
             <Wrapper key={project.index} {...wrapperProps}>
-              <div className="grid">
+              <div className="grid group">
                 <span className="project-index">{project.index}</span>
                 <div className="project-name">
                   {project.name}
-                  {hasLink && <span className="project-arrow">↗</span>}
+                  {hasLink && (
+                    <span className="project-arrow">
+                      <MoveUpRight />
+                    </span>
+                  )}
                 </div>
                 <div className="project-desc">{project.desc}</div>
                 <div className="project-tags">
