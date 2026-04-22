@@ -413,7 +413,7 @@ body {
 }
 
 .project-item--linked:hover .project-arrow svg {
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 
 .project-internal {

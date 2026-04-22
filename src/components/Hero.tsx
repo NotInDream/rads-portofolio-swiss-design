@@ -19,14 +19,6 @@ function Hero() {
           <span className="mono">Raden Ananta Mahardika</span>
         </div>
       </div>
-      <div className="hero-scroll-indicator">
-        <div className="line"></div>
-        <span
-          className="mono"
-          style={{ fontSize: "0.55rem", color: "var(--grey)" }}>
-          Scroll
-        </span>
-      </div>
     </section>
   );
 }
