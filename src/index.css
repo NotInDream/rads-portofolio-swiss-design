@@ -7,9 +7,9 @@
   --color-black: #0a0a0a;
   --color-white: #f5f2eb;
   --color-red: #e63726;
-  --color-grey: #b0aca5;
-  --color-grey-light: #ddd9d0;
-  --color-grey-dark: #d1ccc2;
+  --color-grey: #706b63; /* small labels, index numbers */
+  --color-grey-light: #ddd9d0; /* hairline borders, dividers */
+  --color-grey-dark: #4a4540; /* muted body text — needs real contrast on off-white */
   --font-bebas: "Bebas Neue", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
   --breakpoint-tab: 900px;
@@ -24,20 +24,26 @@ html {
     color 0.3s ease;
 }
 
-/* Dark mode — swaps the black/white tokens, every Tailwind utility that
-   reads var(--color-black) or var(--color-white) flips automatically. */
+/* Dark mode — redeclare every neutral token so Tailwind utilities that read
+   them (bg-black, text-grey-dark, border-grey-light, …) flip automatically. */
 html.dark {
   --color-black: #f5f2eb;
   --color-white: #0a0a0a;
+  --color-grey: #9a9289;
+  --color-grey-light: #302a24;
+  --color-grey-dark: #d1ccc2;
 }
 
 /* Keep the navbar (and its mobile drawer) on their original dark chrome
    regardless of theme — re-declare the tokens inside these subtrees so every
-   bg-black / text-white inside them falls back to the pre-swap values. */
+   utility reading them falls back to the light-mode values. */
 html.dark nav,
 html.dark aside {
   --color-black: #0a0a0a;
   --color-white: #f5f2eb;
+  --color-grey: #b0aca5;
+  --color-grey-light: #ddd9d0;
+  --color-grey-dark: #3a3a3a;
 }
 
 body {
