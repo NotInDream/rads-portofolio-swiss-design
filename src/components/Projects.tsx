@@ -30,6 +30,12 @@ const projects = [
   },
 ];
 
+const itemBase =
+  "group block border-b border-grey-light py-12 transition-all duration-300 first:border-t hover:pl-6 hover:bg-gradient-to-r hover:from-transparent hover:to-red/5";
+
+const tagBase =
+  "whitespace-nowrap border px-3 py-1 font-mono text-[0.6rem] uppercase tracking-[0.06em]";
+
 function Projects() {
   return (
     <section id="projects">
@@ -38,7 +44,7 @@ function Projects() {
         title="Selected Work"
         description="A curated selection of projects spanning backend services, machine learning applications, and fullstack systems."
       />
-      <div className="projects reveal">
+      <div className="reveal py-16">
         {projects.map((project) => {
           const hasLink = "link" in project && project.link;
           const Wrapper = hasLink ? "a" : "div";
@@ -47,33 +53,43 @@ function Projects() {
                 href: project.link,
                 target: "_blank" as const,
                 rel: "noopener noreferrer",
-                className: "project-item project-item--linked",
+                className: `${itemBase} cursor-pointer text-inherit no-underline`,
               }
-            : { className: "project-item" };
+            : { className: itemBase };
 
           return (
             <Wrapper key={project.index} {...wrapperProps}>
-              <div className="grid group">
-                <span className="project-index">{project.index}</span>
-                <div className="project-name">
+              <div className="mx-auto grid max-w-[1440px] grid-cols-12 items-center gap-6 px-12 max-tab:gap-4 max-tab:px-6">
+                <span className="col-start-1 col-end-2 font-bebas text-[2rem] text-grey max-tab:col-end-3">
+                  {project.index}
+                </span>
+                <div className="col-start-2 col-end-6 font-bebas text-[2rem] uppercase tracking-[0.01em] max-tab:col-start-3 max-tab:col-end-13">
                   {project.name}
                   {hasLink && (
-                    <span className="project-arrow">
+                    <span className="ml-3 inline-block align-middle text-[1.2rem] text-grey transition-colors duration-300 group-hover:text-red [&>svg]:transition-transform [&>svg]:duration-300 group-hover:[&>svg]:rotate-45">
                       <MoveUpRight />
                     </span>
                   )}
                 </div>
-                <div className="project-desc">{project.desc}</div>
-                <div className="project-tags">
+                <div className="col-start-6 col-end-10 text-[0.85rem] leading-[1.6] text-grey-dark max-tab:col-start-3 max-tab:col-end-13">
+                  {project.desc}
+                </div>
+                <div className="col-start-10 col-end-13 flex flex-wrap justify-end gap-2 max-tab:col-start-3 max-tab:col-end-13 max-tab:mt-2 max-tab:justify-start">
                   {project.tags.map((tag) => (
                     <span
-                      className={`tag${"red" in tag && tag.red ? " tag--red" : ""}`}
+                      className={`${tagBase} ${
+                        "red" in tag && tag.red
+                          ? "border-red bg-red text-white"
+                          : "border-black"
+                      }`}
                       key={tag.label}>
                       {tag.label}
                     </span>
                   ))}
                   {!hasLink && (
-                    <span className="tag project-internal mono">Internal</span>
+                    <span className={`${tagBase} border-grey-light text-grey`}>
+                      Internal
+                    </span>
                   )}
                 </div>
               </div>

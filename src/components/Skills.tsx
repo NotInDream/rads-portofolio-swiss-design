@@ -48,13 +48,28 @@ function Skills() {
         title="Expertise"
         description="Technical depth across backend systems, AI/ML pipelines, and fullstack development with a focus on security and performance."
       />
-      <div className="skills-grid reveal">
-        <div className="grid">
+      <div className="reveal pt-16 pb-24">
+        <div className="mx-auto grid max-w-[1440px] grid-cols-12 gap-x-6 px-12 max-tab:gap-x-4 max-tab:px-6">
           {categories.map(({ label, title, lines }) => (
-            <div className="skill-category" key={label}>
-              <div className="skill-cat-label">{label}</div>
-              <div className="skill-cat-title">{title}</div>
-              <div className="skill-list">
+            <div
+              className="
+                group relative col-span-6 overflow-hidden border-t border-grey-light
+                px-4 py-6 transition-colors duration-500 hover:text-white
+                before:content-[''] before:absolute before:inset-0 before:z-0
+                before:origin-left before:scale-x-0 before:bg-black
+                before:transition-transform before:duration-500
+                before:ease-[cubic-bezier(0.77,0,0.175,1)]
+                hover:before:scale-x-100
+                max-[550px]:col-span-full
+              "
+              key={label}>
+              <div className="relative z-10 mb-4 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-red">
+                {label}
+              </div>
+              <div className="relative z-10 mb-4 font-bebas text-[1.8rem] uppercase tracking-[0.02em]">
+                {title}
+              </div>
+              <div className="relative z-10 text-[0.82rem] leading-[1.8] text-grey-dark group-hover:text-grey">
                 {lines.map((line, i) => (
                   <Fragment key={i}>
                     {line}

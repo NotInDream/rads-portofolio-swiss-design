@@ -1,25 +1,33 @@
 import SectionHeader from "./SectionHeader";
 
+const expItem = "border-b border-grey-light py-12 first:border-t first:border-grey-light";
+const expGrid = "mx-auto grid max-w-[1440px] grid-cols-12 items-start gap-6 px-12 max-tab:gap-4 max-tab:px-6";
+const expHeader = "col-start-1 col-end-7 flex flex-col max-tab:col-span-full";
+const expDetails = "col-start-8 col-end-13 text-[0.85rem] leading-[1.7] text-grey max-tab:col-span-full max-tab:mt-4";
+const expRole = "font-bebas text-[2rem] uppercase leading-[1.1]";
+const expCompany = "mt-1 font-bebas text-[1.2rem] uppercase leading-[1.1] text-red";
+const expPeriod = "mt-1 font-mono text-[0.7rem] uppercase tracking-[0.06em] text-grey";
+
 function Experience() {
   return (
-    <section id="experience" className="experience">
-      {/* Experience */}
+    <section id="experience" className="bg-white py-16 text-black">
       <SectionHeader
         number="04"
         title="Experience"
         description="Professional roles where I've applied engineering and AI skills to build production systems."
+        muted
       />
-      <div className="experience-list reveal">
-        <div className="exp-item">
-          <div className="grid">
-            <div className="exp-header">
-              <div className="exp-role">Senior Programmer Analyst</div>
-              <div className="exp-company">
+      <div className="reveal py-16">
+        <div className={expItem}>
+          <div className={expGrid}>
+            <div className={expHeader}>
+              <div className={expRole}>Senior Programmer Analyst</div>
+              <div className={expCompany}>
                 Activate Interactive Pte Ltd — Singapore
               </div>
-              <div className="exp-period">Dec 2025 — Present</div>
+              <div className={expPeriod}>Dec 2025 — Present</div>
             </div>
-            <div className="exp-details">
+            <div className={expDetails}>
               Built and maintained microservices handling authentication, app
               attestation, and encrypted API communication using Node.js,
               Express, TypeScript, and PostgreSQL. Implemented iOS App Attest
@@ -29,16 +37,16 @@ function Experience() {
             </div>
           </div>
         </div>
-        <div className="exp-item">
-          <div className="grid">
-            <div className="exp-header">
-              <div className="exp-role">Full Stack Web Developer</div>
-              <div className="exp-company">
+        <div className={expItem}>
+          <div className={expGrid}>
+            <div className={expHeader}>
+              <div className={expRole}>Full Stack Web Developer</div>
+              <div className={expCompany}>
                 Medimas Hospital — Cirebon, Indonesia
               </div>
-              <div className="exp-period">Jul 2025 — Aug 2025</div>
+              <div className={expPeriod}>Jul 2025 — Aug 2025</div>
             </div>
-            <div className="exp-details">
+            <div className={expDetails}>
               Migrated hospital website from PHP 5 to Laravel 12 with React,
               redesigning the UI for a modern, patient-friendly experience.
               Implemented client-side search filtering with debounced input and
@@ -48,16 +56,16 @@ function Experience() {
             </div>
           </div>
         </div>
-        <div className="exp-item">
-          <div className="grid">
-            <div className="exp-header">
-              <div className="exp-role">AI Engineer & Full Stack Developer</div>
-              <div className="exp-company">
+        <div className={expItem}>
+          <div className={expGrid}>
+            <div className={expHeader}>
+              <div className={expRole}>AI Engineer & Full Stack Developer</div>
+              <div className={expCompany}>
                 PT Pertamina EP Zone 7 — Cirebon, Indonesia
               </div>
-              <div className="exp-period">Feb 2025 — Jun 2025</div>
+              <div className={expPeriod}>Feb 2025 — Jun 2025</div>
             </div>
-            <div className="exp-details">
+            <div className={expDetails}>
               Developed an intranet Flask dashboard for live AI monitoring and
               violation management with automated real-time Telegram alerts and
               Excel exports. Engineered an AI-based PPE detection system using
@@ -67,16 +75,16 @@ function Experience() {
             </div>
           </div>
         </div>
-        <div className="exp-item">
-          <div className="grid">
-            <div className="exp-header">
-              <div className="exp-role">Mobile Developer</div>
-              <div className="exp-company">
+        <div className={expItem}>
+          <div className={expGrid}>
+            <div className={expHeader}>
+              <div className={expRole}>Mobile Developer</div>
+              <div className={expCompany}>
                 CV Chembro Indonesia — Bogor, Indonesia
               </div>
-              <div className="exp-period">Sep 2024 — Dec 2024</div>
+              <div className={expPeriod}>Sep 2024 — Dec 2024</div>
             </div>
-            <div className="exp-details">
+            <div className={expDetails}>
               Developed an internal office management mobile app using Flutter
               for project lists, attendance, and finance vouchers serving 50+
               concurrent users. Implemented role-based access control with
@@ -85,14 +93,14 @@ function Experience() {
             </div>
           </div>
         </div>
-        <div className="exp-item">
-          <div className="grid">
-            <div className="exp-header">
-              <div className="exp-role">Intern — Web Scraping & Automation</div>
-              <div className="exp-company">PLN UP3 — Bandung, Indonesia</div>
-              <div className="exp-period">Jul 2024 — Aug 2024</div>
+        <div className={expItem}>
+          <div className={expGrid}>
+            <div className={expHeader}>
+              <div className={expRole}>Intern — Web Scraping & Automation</div>
+              <div className={expCompany}>PLN UP3 — Bandung, Indonesia</div>
+              <div className={expPeriod}>Jul 2024 — Aug 2024</div>
             </div>
-            <div className="exp-details">
+            <div className={expDetails}>
               Automated extraction of operational data from the APKT intranet
               using Python Selenium, replacing a manual process and delivering
               daily insights via a custom Telegram bot.
@@ -100,7 +108,6 @@ function Experience() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }
